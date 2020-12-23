@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: "2020-12-23T08:08:26Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:hard:
+          .: {}
+          f:persistentvolumeclaims: {}
+          f:requests.storage: {}
+        f:used:
+          .: {}
+          f:persistentvolumeclaims: {}
+          f:requests.storage: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2020-12-23T08:08:26Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:hard:
+          .: {}
+          f:persistentvolumeclaims: {}
+          f:requests.storage: {}
+    manager: oc
+    operation: Update
+    time: "2020-12-23T08:08:26Z"
+  name: storage
+  namespace: gitops-review
+  resourceVersion: "1172291"
+  selfLink: /api/v1/namespaces/gitops-review/resourcequotas/storage
+  uid: 8737ce50-7a6f-48b6-87d9-9deea523d22a
+spec:
+  hard:
+    persistentvolumeclaims: "3"
+    requests.storage: 5G
+status:
+  hard:
+    persistentvolumeclaims: "3"
+    requests.storage: 5G
+  used:
+    persistentvolumeclaims: "1"
+    requests.storage: 1Gi

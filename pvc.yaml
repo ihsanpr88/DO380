@@ -1,0 +1,78 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: nfs-storage-provisioner
+    creationTimestamp: "2020-12-22T16:45:11Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    labels:
+      app: jenkins-persistent
+      template: jenkins-persistent-template
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:template: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+      manager: Swagger-Codegen
+      operation: Update
+      time: "2020-12-22T16:45:11Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+        f:spec:
+          f:volumeName: {}
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2020-12-22T16:45:11Z"
+    name: jenkins
+    namespace: gitops-review
+    resourceVersion: "1093029"
+    selfLink: /api/v1/namespaces/gitops-review/persistentvolumeclaims/jenkins
+    uid: ded5972f-6ce3-4d23-b77e-cb06ce523d76
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 1Gi
+    storageClassName: nfs-storage
+    volumeMode: Filesystem
+    volumeName: pvc-ded5972f-6ce3-4d23-b77e-cb06ce523d76
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
